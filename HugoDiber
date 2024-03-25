@@ -1,0 +1,610 @@
+#Hacer juego Wordle.
+#Color verde posicion letra/s correcta
+
+from tkinter import *
+import tkinter as tk
+from tkinter import messagebox
+
+root=Tk()
+root.geometry("900x400")
+#-
+palabraTecnologia=["celular","maquina","iphones","consola"]
+#-
+#-Uno
+cuadradoUnoTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoUnoTexto.grid(row=0,column=0,pady=35,padx=20,sticky="NW")
+cuadradoUnoEntry=tk.Entry(root,text="",font="Times 15",
+    width=6,bg="white",textvariable=cuadradoUnoTexto)
+cuadradoUnoEntry.grid(row=0,column=0,pady=35,padx=20,sticky="NW")
+#Dos
+cuadradoDosTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoDosTexto.grid(row=0,column=0,pady=78,padx=20,sticky="NW")
+cuadradoDosEntry=tk.Entry(root,text="",font="Times 15",
+    width=6,bg="white",textvariable=cuadradoDosTexto)
+cuadradoDosEntry.grid(row=0,column=0,pady=78,padx=20,sticky="NW")
+#Tres
+cuadradoTresTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoTresTexto.grid(row=0,column=0,pady=120,padx=20,sticky="NW")
+cuadradoTresEntry=tk.Entry(root,text="",font="Times 15",
+    width=6,bg="white",textvariable=cuadradoTresTexto)
+cuadradoTresEntry.grid(row=0,column=0,pady=120,padx=20,sticky="NW")
+#-Cuatro
+cuadradoCuatroTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoCuatroTexto.grid(row=0,column=0,pady=165,padx=20,sticky="NW")
+cuadradoCuatroEntry=tk.Entry(root,text="",font="Times 15",
+    width=6,bg="white",textvariable=cuadradoCuatroTexto)
+cuadradoCuatroEntry.grid(row=0,column=0,pady=165,padx=20,sticky="NW")
+#-Cinco
+cuadradoCincoTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoCincoTexto.grid(row=0,column=0,pady=210,padx=20,sticky="NW")
+cuadradoCincoEntry=tk.Entry(root,text="",font="Times 15",
+    width=6,bg="white",textvariable=cuadradoCincoTexto)
+cuadradoCincoEntry.grid(row=0,column=0,pady=210,padx=20,sticky="NW")
+#-Seis
+cuadradoSeisTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoSeisTexto.grid(row=0,column=0,pady=255,padx=20,sticky="NW")
+cuadradoSeisEntry=tk.Entry(root,text="",font="Times 15",
+    width=6,bg="white",textvariable=cuadradoSeisTexto)
+cuadradoSeisEntry.grid(row=0,column=0,pady=255,padx=20,sticky="NW")
+#Seisdos
+cuadradoSeisDosTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoSeisDosTexto.grid(row=0,column=0,pady=300,padx=20,sticky="NW")#-Segunda columna
+cuadradoSeisDosEntry=tk.Entry(root,text="",font="Times 15",
+    width=6,bg="white",textvariable=cuadradoSeisDosTexto)
+cuadradoSeisDosEntry.grid(row=0,column=0,pady=300,padx=20,sticky="NW")#-Segunda columna
+
+#-Uno
+cuadradoSieteTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoSieteTexto.grid(row=0,column=0,pady=35,padx=120,sticky="NW")
+cuadradoSieteEntry=tk.Entry(root,text="",font="Times 15",
+    width=6,bg="white",textvariable=cuadradoSieteTexto)
+cuadradoSieteEntry.grid(row=0,column=0,pady=35,padx=120,sticky="NW")
+#Dos
+cuadradoOchoTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoOchoTexto.grid(row=0,column=0,pady=78,padx=120,sticky="NW")
+cuadradoOchoEntry=tk.Entry(root,text="",font="Times 15",
+    width=6,bg="white",textvariable=cuadradoOchoTexto)
+cuadradoOchoEntry.grid(row=0,column=0,pady=78,padx=120,sticky="NW")
+#Tres
+cuadradoNueveTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoNueveTexto.grid(row=0,column=0,pady=120,padx=120,sticky="NW")
+cuadradoNueveEntry=tk.Entry(root,width=6,text="",font="Times 15",
+                    textvariable=cuadradoNueveTexto)
+cuadradoNueveEntry.grid(row=0,column=0,pady=120,padx=120,sticky="NW")
+#cuatro
+cuadradoDiezTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoDiezTexto.grid(row=0,column=0,pady=165,padx=120,sticky="NW")
+cuadradoDiezEntry=tk.Entry(root,width=6,text="",font="Times 15",
+                    textvariable=cuadradoDiezTexto)
+cuadradoDiezEntry.grid(row=0,column=0,pady=165,padx=120,sticky="NW")
+#cinco
+cuadradoOnceTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoOnceTexto.grid(row=0,column=0,pady=210,padx=120,sticky="NW")
+cuadradoOnceEntry=tk.Entry(root,width=6,text="",font="Times 15",
+                    textvariable=cuadradoOnceTexto)
+cuadradoOnceEntry.grid(row=0,column=0,pady=210,padx=120,sticky="NW")
+#seis
+cuadradoDoceTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoDoceTexto.grid(row=0,column=0,pady=255,padx=120,sticky="NW")
+cuadradoDoceEntry=tk.Entry(root,width=6,text="",font="Times 15",
+                    textvariable=cuadradoDoceTexto)
+cuadradoDoceEntry.grid(row=0,column=0,pady=255,padx=120,sticky="NW")
+#seisdos
+cuadradoDoceDosTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoDoceDosTexto.grid(row=0,column=0,pady=300,padx=120,sticky="NW")
+cuadradoDoceDosEntry=tk.Entry(root,width=6,text="",font="Times 15",
+                    textvariable=cuadradoDoceDosTexto)
+cuadradoDoceDosEntry.grid(row=0,column=0,pady=300,padx=120,sticky="NW")
+
+#uno
+cuadradoTreceTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoTreceTexto.grid(row=0,column=0,pady=35,padx=220,sticky="NW")
+cuadradoTreceEntry=tk.Entry(root,text="",font="Times 15",
+    width=6,bg="white",textvariable=cuadradoTreceTexto)
+cuadradoTreceEntry.grid(row=0,column=0,pady=35,padx=220,sticky="NW")
+#Dos
+cuadradoCatorceTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoCatorceTexto.grid(row=0,column=0,pady=78,padx=220,sticky="NW")
+cuadradoCatorceEntry=tk.Entry(root,text="",font="Times 15",
+    width=6,bg="white",textvariable=cuadradoCatorceTexto)
+cuadradoCatorceEntry.grid(row=0,column=0,pady=78,padx=220,sticky="NW")
+#Tres
+cuadradoQuinceTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoQuinceTexto.grid(row=0,column=0,pady=120,padx=220,sticky="NW")
+cuadradoQuinceEntry=tk.Entry(root,width=6,text="",font="Times 15",
+                    textvariable=cuadradoQuinceTexto)
+cuadradoQuinceEntry.grid(row=0,column=0,pady=120,padx=220,sticky="NW")
+#cuatro
+cuadradoDieciseisTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoDieciseisTexto.grid(row=0,column=0,pady=165,padx=220,sticky="NW")
+cuadradoDieciseisEntry=tk.Entry(root,width=6,text="",font="Times 15",
+                    textvariable=cuadradoDieciseisTexto)
+cuadradoDieciseisEntry.grid(row=0,column=0,pady=165,padx=220,sticky="NW")
+#cinco
+cuadradoDiecisieteTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoDiecisieteTexto.grid(row=0,column=0,pady=210,padx=220,sticky="NW")
+cuadradoDiecisieteEntry=tk.Entry(root,width=6,text="",font="Times 15",
+                    textvariable=cuadradoDiecisieteTexto)
+cuadradoDiecisieteEntry.grid(row=0,column=0,pady=210,padx=220,sticky="NW")
+#seis
+cuadradoDieciochoTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoDieciochoTexto.grid(row=0,column=0,pady=255,padx=220,sticky="NW")
+cuadradoDieciochoEntry=tk.Entry(root,width=6,text="",font="Times 15",
+                    textvariable=cuadradoDieciochoTexto)
+cuadradoDieciochoEntry.grid(row=0,column=0,pady=255,padx=220,sticky="NW")
+
+#seisdos
+cuadradoDieciochoDosTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoDieciochoDosTexto.grid(row=0,column=0,pady=300,padx=220,sticky="NW")
+cuadradoDieciochoDosEntry=tk.Entry(root,width=6,text="",font="Times 15",
+                    textvariable=cuadradoDieciochoDosTexto)
+cuadradoDieciochoDosEntry.grid(row=0,column=0,pady=300,padx=220,sticky="NW")
+
+#uno
+cuadradoDiecinueveTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoDiecinueveTexto.grid(row=0,column=0,pady=35,padx=320,sticky="NW")
+cuadradoDiecinueveEntry=tk.Entry(root,width=6,text="",font="Times 15",
+                    textvariable=cuadradoDiecinueveTexto)
+cuadradoDiecinueveEntry.grid(row=0,column=0,pady=35,padx=320,sticky="NW")
+
+#dos
+cuadradoVeinteTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoVeinteTexto.grid(row=0,column=0,pady=78,padx=320,sticky="NW")
+cuadradoVeinteEntry=tk.Entry(root,width=6,text="",font="Times 15",
+                    textvariable=cuadradoVeinteTexto)
+cuadradoVeinteEntry.grid(row=0,column=0,pady=78,padx=320,sticky="NW")
+
+#tres
+cuadradoVeintiunoTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoVeintiunoTexto.grid(row=0,column=0,pady=120,padx=320,sticky="NW")
+cuadradoVeintiunoEntry=tk.Entry(root,width=6,text="",font="Times 15",
+                    textvariable=cuadradoVeintiunoTexto)
+cuadradoVeintiunoEntry.grid(row=0,column=0,pady=120,padx=320,sticky="NW")
+
+#-cuatro
+cuadradoVeintidosTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoVeintidosTexto.grid(row=0,column=0,pady=165,padx=320,sticky="NW")
+cuadradoVeintidosEntry=tk.Entry(root,width=6,text="",font="Times 15",
+                    textvariable=cuadradoVeintidosTexto)
+cuadradoVeintidosEntry.grid(row=0,column=0,pady=165,padx=320,sticky="NW")
+
+#-cinco
+cuadradoVeintitresTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoVeintitresTexto.grid(row=0,column=0,pady=210,padx=320,sticky="NW")
+cuadradoVeintitresEntry=tk.Entry(root,width=6,text="",font="Times 15",
+                    textvariable=cuadradoVeintitresTexto)
+cuadradoVeintitresEntry.grid(row=0,column=0,pady=210,padx=320,sticky="NW")
+
+#-seis
+cuadradoVeinticuatroTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoVeinticuatroTexto.grid(row=0,column=0,pady=255,padx=320,sticky="NW")
+cuadradoVeinticuatroEntry=tk.Entry(root,width=6,text="",font="Times 15",
+                    textvariable=cuadradoVeinticuatroTexto)
+cuadradoVeinticuatroEntry.grid(row=0,column=0,pady=255,padx=320,sticky="NW")
+
+#-seisdos
+cuadradoVeinticuatroDosTexto=tk.Label(root,font="Times 15",width=9)
+cuadradoVeinticuatroDosTexto.grid(row=0,column=0,pady=300,padx=320,sticky="NW")
+cuadradoVeinticuatroDosEntry=tk.Entry(root,width=6,text="",font="Times 15",
+                    textvariable=cuadradoVeinticuatroDosTexto)
+cuadradoVeinticuatroDosEntry.grid(row=0,column=0,pady=300,padx=320,sticky="NW")
+
+#-
+def todosCuadrados():
+    global palabraTecnologia
+    global cuadradoUno,cuadradoDos,cuadradoTres,cuadradoCuatro,cuadradoCinco,cuadradoSeis,cuadradoSeisDos,cuadradoSiete,cuadradoOcho
+    global cuadradoNueve,cuadradoDiez,cuadradoOnce,cuadradoDoce,cuadradoDoceDos,cuadradoTrece,cuadradoCatorce,cuadradoQuince
+    global cuadradoDieciseis,cuadradoDiecisiete,cuadradoDieciocho,cuadradoDieciochoDos,cuadradoDiecinueve,cuadradoVeinte,cuadradoVeintiuno
+    global cuadradoVeintidos,cuadradoVeintitres,cuadradoVeinticuatro,cuadradoVeinticuatroDos
+    cuadradoUno=cuadradoUnoEntry.get()
+    cuadradoDos=cuadradoDosEntry.get()
+    cuadradoTres=cuadradoTresEntry.get()
+    cuadradoCuatro=cuadradoCuatroEntry.get()
+    cuadradoCinco=cuadradoCincoEntry.get()
+    cuadradoSeis=cuadradoSeisEntry.get()
+    cuadradoSeisDos=cuadradoSeisDosEntry.get()
+    cuadradoSiete=cuadradoSieteEntry.get()
+    cuadradoOcho=cuadradoOchoEntry.get()
+    cuadradoNueve=cuadradoNueveEntry.get()
+    cuadradoDiez=cuadradoDiezEntry.get()
+    cuadradoOnce=cuadradoOnceEntry.get()
+    cuadradoDoce=cuadradoDoceEntry.get()
+    cuadradoDoceDos=cuadradoDoceDosEntry.get()
+    cuadradoTrece=cuadradoTreceEntry.get()
+    cuadradoCatorce=cuadradoCatorceEntry.get()
+    cuadradoQuince=cuadradoQuinceEntry.get()
+    cuadradoDieciseis=cuadradoDieciseisEntry.get()
+    cuadradoDiecisiete=cuadradoDiecisieteEntry.get()
+    cuadradoDieciocho=cuadradoDieciochoEntry.get()
+    cuadradoDieciochoDos=cuadradoDieciochoDosEntry.get()
+    cuadradoDiecinueve=cuadradoDiecinueveEntry.get()
+    cuadradoVeinte=cuadradoVeinteEntry.get()
+    cuadradoVeintiuno=cuadradoVeintiunoEntry.get()
+    cuadradoVeintidos=cuadradoVeintidosEntry.get()
+    cuadradoVeintitres=cuadradoVeintitresEntry.get()
+    cuadradoVeinticuatro=cuadradoVeinticuatroEntry.get()
+    cuadradoVeinticuatroDos=cuadradoVeinticuatroDosEntry.get()
+    cuadrados=[cuadradoUno,cuadradoDos,cuadradoTres,cuadradoCuatro,cuadradoCinco,cuadradoSeis,cuadradoSeisDos,
+        cuadradoSiete,cuadradoOcho,cuadradoNueve,cuadradoDiez,cuadradoOnce,cuadradoDoce,cuadradoDoceDos,
+        cuadradoTrece,cuadradoCatorce,cuadradoQuince,cuadradoDieciseis,cuadradoDiecisiete,
+        cuadradoDieciocho,cuadradoDieciochoDos,cuadradoDiecinueve,cuadradoVeinte,cuadradoVeintiuno,cuadradoVeintidos,
+        cuadradoVeintitres,cuadradoVeinticuatro,cuadradoVeinticuatroDos]
+    if cuadrados=="":
+        messagebox.showinfo("Atencion","Esta vacio")       
+    for i in range(0, len(cuadrados)):
+        #cuadrados[i] = int(cuadrados[i])
+        cuadradoUnoEntry.delete("1",tk.END)
+        cuadradoDosEntry.delete("1",tk.END)
+        cuadradoTresEntry.delete("1",tk.END)
+        cuadradoCuatroEntry.delete("1",tk.END)
+        cuadradoCincoEntry.delete("1",tk.END)
+        cuadradoSeisEntry.delete("1",tk.END)
+        cuadradoSeisDosEntry.delete("1",tk.END)
+        cuadradoSieteEntry.delete("1",tk.END)
+        cuadradoOchoEntry.delete("1",tk.END)
+        cuadradoNueveEntry.delete("1",tk.END)
+        cuadradoDiezEntry.delete("1",tk.END)
+        cuadradoOnceEntry.delete("1",tk.END)
+        cuadradoDoceEntry.delete("1",tk.END)
+        cuadradoDoceDosEntry.delete("1",tk.END)
+        cuadradoTreceEntry.delete("1",tk.END)
+        cuadradoCatorceEntry.delete("1",tk.END)
+        cuadradoQuinceEntry.delete("1",tk.END)
+        cuadradoDieciseisEntry.delete("1",tk.END)
+        cuadradoDiecisieteEntry.delete("1",tk.END)
+        cuadradoDieciochoEntry.delete("1",tk.END)             
+        cuadradoDieciochoDosEntry.delete("1",tk.END)
+        cuadradoDiecinueveEntry.delete("1",tk.END)
+        cuadradoVeinteEntry.delete("1",tk.END)
+        cuadradoVeintiunoEntry.delete("1",tk.END)
+        cuadradoVeintidosEntry.delete("1",tk.END)             
+        cuadradoVeintitresEntry.delete("1",tk.END)
+        cuadradoVeinticuatroEntry.delete("1",tk.END)             
+        cuadradoVeinticuatroDosEntry.delete("1",tk.END)             
+
+        #print(cuadrados)
+    if cuadradoUno.isalpha() and cuadradoDos.isalpha():
+        pass
+    elif cuadradoTres.isalpha() and cuadradoCuatro.isalpha():
+        pass
+    elif cuadradoCinco.isalpha() and cuadradoSeis.isalpha():
+        pass
+    elif cuadradoSeisDos.isalpha():
+        pass
+    elif cuadradoSiete.isalpha() and cuadradoOcho.isalpha():
+        pass
+    elif cuadradoNueve.isalpha() and cuadradoDiez.isalpha():
+        pass
+    elif cuadradoOnce.isalpha() and cuadradoDoce.isalpha():
+        pass
+    elif cuadradoDoceDos.isalpha():
+        pass
+    elif cuadradoTrece.isalpha() and cuadradoCatorce.isalpha():
+        pass
+    elif cuadradoQuince.isalpha() and cuadradoDieciseis.isalpha():
+        pass
+    elif cuadradoDiecisiete.isalpha() and cuadradoDieciocho.isalpha():
+        pass
+    elif cuadradoDieciochoDos.isalpha():
+        pass
+    elif cuadradoDiecinueve.isalpha() and cuadradoVeinte.isalpha():
+        pass
+    elif cuadradoVeintiuno.isalpha() and cuadradoVeintidos.isalpha():
+        pass
+    elif cuadradoVeintitres.isalpha() and cuadradoVeinticuatro.isalpha():
+        pass
+    elif cuadradoVeinticuatroDos.isalpha():
+        pass
+    #else:
+    #    messagebox.showinfo("error", "error")
+    #-
+    strCuadrados=" "
+    for x in cuadrados:
+        strCuadrados+=""+ x    
+    print(strCuadrados)
+    
+    #-Palabra una celular
+    
+    if cuadrados[0] not in palabraTecnologia[0]:
+        cuadradoUnoEntry.config(bg="indianred")
+    if cuadrados[0] in palabraTecnologia[0]:
+        cuadradoUnoEntry.config(bg="yellow")
+    if "c"==cuadrados[0]:
+        cuadradoUnoEntry.config(bg="lightgreen")
+    if cuadrados[0]=="":
+        cuadradoUnoEntry.config(bg="white")
+
+    if cuadrados[1] not in palabraTecnologia[0]:
+        cuadradoDosEntry.config(bg="indianred")
+    if cuadrados[1] in palabraTecnologia[0]:
+        cuadradoDosEntry.config(bg="yellow")
+    if "e"==cuadrados[1]:
+        cuadradoDosEntry.config(bg="lightgreen")
+    if cuadrados[1]=="":
+        cuadradoDosEntry.config(bg="white")
+
+    if cuadrados[2] not in palabraTecnologia[0]:
+        cuadradoTresEntry.config(bg="indianred")
+    if cuadrados[2] in palabraTecnologia[0]:
+        cuadradoTresEntry.config(bg="yellow")
+    if "l"==cuadrados[2]:
+        cuadradoTresEntry.config(bg="lightgreen")
+    if cuadrados[2]=="":
+        cuadradoTresEntry.config(bg="white")
+
+    if cuadrados[3] not in palabraTecnologia[0]:
+        cuadradoCuatroEntry.config(bg="indianred")
+    if cuadrados[3] in palabraTecnologia[0]:
+        cuadradoCuatroEntry.config(bg="yellow")
+    if "u"==cuadrados[3]:
+        cuadradoCuatroEntry.config(bg="lightgreen")
+    if cuadrados[3]=="":
+        cuadradoCuatroEntry.config(bg="white")
+
+    if cuadrados[4] not in palabraTecnologia[0]:
+        cuadradoCincoEntry.config(bg="indianred")
+    if cuadrados[4] in palabraTecnologia[0]:
+        cuadradoCincoEntry.config(bg="yellow")
+    if "l"==cuadrados[4]:
+        cuadradoCincoEntry.config(bg="lightgreen")
+    if cuadrados[4]=="":
+        cuadradoCincoEntry.config(bg="white")
+
+    if cuadrados[5] not in palabraTecnologia[0]:
+        cuadradoSeisEntry.config(bg="indianred")
+    if cuadrados[5] in palabraTecnologia[0]:
+        cuadradoSeisEntry.config(bg="yellow")
+    if "a"==cuadrados[5]:
+        cuadradoSeisEntry.config(bg="lightgreen")
+    if cuadrados[5]=="":
+        cuadradoSeisEntry.config(bg="white")
+
+    if cuadrados[6] not in palabraTecnologia[0]:
+        cuadradoSeisDosEntry.config(bg="indianred")
+    if cuadrados[6] in palabraTecnologia[0]:
+        cuadradoSeisDosEntry.config(bg="yellow")
+    if "r"==cuadrados[6]:
+        cuadradoSeisDosEntry.config(bg="lightgreen")
+    if cuadrados[6]=="":
+        cuadradoSeisDosEntry.config(bg="white")
+
+                        #Palabra dos: maquina
+        
+    if cuadrados[7] not in palabraTecnologia[1]:
+        cuadradoSieteEntry.config(bg="indianred")
+    if cuadrados[7] in palabraTecnologia[1]:
+        cuadradoSieteEntry.config(bg="yellow")
+    if "m"==cuadrados[7]:
+        cuadradoSieteEntry.config(bg="lightgreen")
+    if cuadrados[7]=="":
+        cuadradoSieteEntry.config(bg="white")
+
+    if cuadrados[8] not in palabraTecnologia[1]:
+        cuadradoOchoEntry.config(bg="indianred")
+    if cuadrados[8] in palabraTecnologia[1]:
+        cuadradoOchoEntry.config(bg="yellow")
+    if "a"==cuadrados[8]:
+        cuadradoOchoEntry.config(bg="lightgreen")
+    if cuadrados[8]=="":
+        cuadradoOchoEntry.config(bg="white")
+
+    if cuadrados[9] not in palabraTecnologia[1]:
+        cuadradoNueveEntry.config(bg="indianred")
+    if cuadrados[9] in palabraTecnologia[1]:
+        cuadradoNueveEntry.config(bg="yellow")
+    if "q"==cuadrados[9]:
+        cuadradoNueveEntry.config(bg="lightgreen")
+    if cuadrados[9]=="":
+        cuadradoNueveEntry.config(bg="white")
+
+    if cuadrados[10] not in palabraTecnologia[1]:
+        cuadradoDiezEntry.config(bg="indianred")
+    if cuadrados[19] in palabraTecnologia[1]:
+        cuadradoDiezEntry.config(bg="yellow")
+    if "u"==cuadrados[10]:
+        cuadradoDiezEntry.config(bg="lightgreen")
+    if cuadrados[10]=="":
+        cuadradoDiezEntry.config(bg="white")
+
+    if cuadrados[11] not in palabraTecnologia[1]:
+        cuadradoOnceEntry.config(bg="indianred")
+    if cuadrados[11] in palabraTecnologia[1]:
+        cuadradoOnceEntry.config(bg="yellow")
+    if "i"==cuadrados[11]:
+        cuadradoOnceEntry.config(bg="lightgreen")
+    if cuadrados[11]=="":
+        cuadradoOnceEntry.config(bg="white")
+    
+    if cuadrados[12] not in palabraTecnologia[1]:
+        cuadradoDoceEntry.config(bg="indianred")
+    if cuadrados[12] in palabraTecnologia[1]:
+        cuadradoDoceEntry.config(bg="yellow")
+    if "n"==cuadrados[12]:
+        cuadradoDoceEntry.config(bg="lightgreen")
+    if cuadrados[12]=="":
+        cuadradoDoceEntry.config(bg="white")
+                  
+    if cuadrados[13] not in palabraTecnologia[1]:
+        cuadradoDoceDosEntry.config(bg="indianred")
+    if cuadrados[13] in palabraTecnologia[1]:
+        cuadradoDoceDosEntry.config(bg="yellow")
+    if "a"==cuadrados[13]:
+        cuadradoDoceDosEntry.config(bg="lightgreen")
+    if cuadrados[13]=="":
+        cuadradoDoceDosEntry.config(bg="white")
+                    
+            #Palabra 3: iphones
+            
+    if cuadrados[14] not in palabraTecnologia[2]:
+        cuadradoTreceEntry.config(bg="indianred")
+    if cuadrados[14] in palabraTecnologia[2]:
+        cuadradoTreceEntry.config(bg="yellow")
+    if "i"==cuadrados[14]:
+        cuadradoTreceEntry.config(bg="lightgreen")
+    if cuadrados[14]=="":
+        cuadradoTreceEntry.config(bg="white")
+        
+    if cuadrados[15] not in palabraTecnologia[2]:
+        cuadradoCatorceEntry.config(bg="indianred")
+    if cuadrados[15] in palabraTecnologia[2]:
+        cuadradoCatorceEntry.config(bg="yellow")
+    if "p"==cuadrados[15]:
+        cuadradoCatorceEntry.config(bg="lightgreen")
+    if cuadrados[15]=="":
+        cuadradoCatorceEntry.config(bg="white")  
+    
+    if cuadrados[16] not in palabraTecnologia[2]:
+        cuadradoQuinceEntry.config(bg="indianred")
+    if cuadrados[16] in palabraTecnologia[2]:
+        cuadradoQuinceEntry.config(bg="yellow")
+    if "h"==cuadrados[16]:
+        cuadradoQuinceEntry.config(bg="lightgreen")
+    if cuadrados[16]=="":
+        cuadradoQuinceEntry.config(bg="white")  
+
+    if cuadrados[17] not in palabraTecnologia[2]:
+        cuadradoDieciseisEntry.config(bg="indianred")
+    if cuadrados[17] in palabraTecnologia[2]:
+        cuadradoDieciseisEntry.config(bg="yellow")
+    if "o"==cuadrados[17]:
+        cuadradoDieciseisEntry.config(bg="lightgreen")
+    if cuadrados[17]=="":
+        cuadradoDieciseisEntry.config(bg="white")  
+
+    if cuadrados[18] not in palabraTecnologia[2]:
+        cuadradoDiecisieteEntry.config(bg="indianred")
+    if cuadrados[18] in palabraTecnologia[2]:
+        cuadradoDiecisieteEntry.config(bg="yellow")
+    if "n"==cuadrados[18]:
+        cuadradoDiecisieteEntry.config(bg="lightgreen")
+    if cuadrados[18]=="":
+        cuadradoDiecisieteEntry.config(bg="white")  
+
+    if cuadrados[19] not in palabraTecnologia[2]:
+        cuadradoDieciochoEntry.config(bg="indianred")
+    if cuadrados[19] in palabraTecnologia[2]:
+        cuadradoDieciochoEntry.config(bg="yellow")
+    if "e"==cuadrados[19]:
+        cuadradoDieciochoEntry.config(bg="lightgreen")
+    if cuadrados[19]=="":
+        cuadradoDieciochoEntry.config(bg="white")
+        
+    if cuadrados[20] not in palabraTecnologia[2]:
+        cuadradoDieciochoDosEntry.config(bg="indianred")
+    if cuadrados[20] in palabraTecnologia[2]:
+        cuadradoDieciochoDosEntry.config(bg="yellow")
+    if "s"==cuadrados[20]:
+        cuadradoDieciochoDosEntry.config(bg="lightgreen")
+    if cuadrados[20]=="":
+        cuadradoDieciochoDosEntry.config(bg="white")    
+  
+              #Palabra 4 consola
+
+    if cuadrados[21] not in palabraTecnologia[3]:
+        cuadradoDiecinueveEntry.config(bg="indianred")
+    if cuadrados[21] in palabraTecnologia[3]:
+        cuadradoDiecinueveEntry.config(bg="yellow")
+    if "c"==cuadrados[21]:
+        cuadradoDiecinueveEntry.config(bg="lightgreen")
+    if cuadrados[21]=="":
+        cuadradoDiecinueveEntry.config(bg="white")
+    
+    if cuadrados[22] not in palabraTecnologia[3]:
+        cuadradoVeinteEntry.config(bg="indianred")
+    if cuadrados[22] in palabraTecnologia[3]:
+        cuadradoVeinteEntry.config(bg="yellow")
+    if "o"==cuadrados[22]:
+        cuadradoVeinteEntry.config(bg="lightgreen")
+    if cuadrados[22]=="":
+        cuadradoVeinteEntry.config(bg="white")
+
+    if cuadrados[23] not in palabraTecnologia[3]:
+        cuadradoVeintiunoEntry.config(bg="indianred")
+    if cuadrados[23] in palabraTecnologia[3]:
+        cuadradoVeintiunoEntry.config(bg="yellow")
+    if "n"==cuadrados[23]:
+        cuadradoVeintiunoEntry.config(bg="lightgreen")
+    if cuadrados[23]=="":
+        cuadradoVeintiunoEntry.config(bg="white")
+    
+    if cuadrados[24] not in palabraTecnologia[3]:
+        cuadradoVeintidosEntry.config(bg="indianred")
+    if cuadrados[24] in palabraTecnologia[3]:
+        cuadradoVeintidosEntry.config(bg="yellow")
+    if "s"==cuadrados[24]:
+        cuadradoVeintidosEntry.config(bg="lightgreen")
+    if cuadrados[24]=="":
+        cuadradoVeintidosEntry.config(bg="white")
+
+    if cuadrados[25] not in palabraTecnologia[3]:
+        cuadradoVeintitresEntry.config(bg="indianred")
+    if cuadrados[25] in palabraTecnologia[3]:
+        cuadradoVeintitresEntry.config(bg="yellow")
+    if "o"==cuadrados[25]:
+        cuadradoVeintitresEntry.config(bg="lightgreen")
+    if cuadrados[25]=="":
+        cuadradoVeintitresEntry.config(bg="white")
+
+    if cuadrados[26] not in palabraTecnologia[3]:
+        cuadradoVeinticuatroEntry.config(bg="indianred")
+    if cuadrados[26] in palabraTecnologia[3]:
+        cuadradoVeinticuatroEntry.config(bg="yellow")
+    if "l"==cuadrados[26]:
+        cuadradoVeinticuatroEntry.config(bg="lightgreen")
+    if cuadrados[26]=="":
+        cuadradoVeinticuatroEntry.config(bg="white")
+
+    if cuadrados[27] not in palabraTecnologia[3]:
+        cuadradoVeinticuatroDosEntry.config(bg="indianred")
+    if cuadrados[27] in palabraTecnologia[3]:
+        cuadradoVeinticuatroDosEntry.config(bg="yellow")
+    if cuadrados[27]=="":
+        cuadradoVeinticuatroDosEntry.config(bg="white")
+
+cuadradoUno=tk.StringVar()
+cuadradoDos=tk.StringVar()
+cuadradoTres=tk.StringVar()
+cuadradoCuatro=tk.StringVar()
+cuadradoCinco=tk.StringVar()
+cuadradoSeis=tk.StringVar()
+cuadradoSeisDos=tk.StringVar()
+#-Segunda parte entries
+cuadradoSiete=tk.StringVar()
+cuadradoOcho=tk.StringVar()
+cuadradoNueve=tk.StringVar()
+cuadradoDiez=tk.StringVar()
+cuadradoOnce=tk.StringVar()
+cuadradoDoce=tk.StringVar()
+cuadradoDoceDos=tk.StringVar()
+#-Tercera parte entries
+cuadradoTrece=tk.StringVar()
+cuadradoCatorce=tk.StringVar()
+cuadradoQuince=tk.StringVar()
+cuadradoDieciseis=tk.StringVar()
+cuadradoDiecisiete=tk.StringVar()
+cuadradoDieciocho=tk.StringVar()
+cuadradoDieciochoDos=tk.StringVar()
+#-Cuarta parte entries
+cuadradoDiecinueve=tk.StringVar()
+cuadradoVeinte=tk.StringVar()
+cuadradoVeintiuno=tk.StringVar()
+cuadradoVeintidos=tk.StringVar()
+cuadradoVeintitres=tk.StringVar()
+cuadradoVeintiCuatro=tk.StringVar()
+cuadradoVeintiCuatroDos=tk.StringVar()
+
+#-
+textoADivina=tk.Label(root,text="Adivina la ubicación de las 4 ",font="Arial 15")
+textoADivina.grid(row=0,column=0,padx=(450,100),pady=30,sticky="WN")
+textoADivina2=tk.Label(root,text="palabras de accesorios",font="Arial 15")
+textoADivina2.grid(row=0,column=0,padx=(450,100),pady=80,sticky="WN")
+textoADivina3=tk.Label(root,text="de tecnologia:",font="Arial 15")
+textoADivina3.grid(row=0,column=0,padx=(450,100),pady=130,sticky="WN")
+textoADivina4=tk.Label(root,text="Celular,máquina,iphones,consola",font="Arial 14")
+textoADivina4.grid(row=0,column=0,padx=(450,100),pady=190,sticky="WN")
+#
+miBoton=tk.Button(root, text="tocar",font="Times 15",
+    width=6,command=todosCuadrados,bg="orange")
+miBoton.grid(row=0,column=0,pady=300,padx=550)
+#-
+root.mainloop()
